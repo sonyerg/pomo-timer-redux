@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+button {
+  margin: 5px;
+}
+
+#time-left {
+  font-size: 2em;
+  margin: 20px 0;
+}
