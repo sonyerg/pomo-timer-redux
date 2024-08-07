@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface TimerStateProps {
   breakLength: number;
@@ -30,16 +30,27 @@ const timerSlice = createSlice({
     },
     incrementSession(state) {
       if (state.sessionLength < 60) {
-        state.sessionLength++;
+        state.sessionLength += 5;
 
         state.timeLeft = state.sessionLength * 60;
       }
     },
     decrementSession(state) {
       if (state.sessionLength > 1) {
-        state.sessionLength--;
+        state.sessionLength -= 5;
 
         state.timeLeft = state.sessionLength * 60;
+      }
+    },
+    setSessionLength(state, action: PayloadAction<number>) {
+      if (action.payload > 0 && action.payload <= 60) {
+        state.sessionLength = action.payload;
+        state.timeLeft = action.payload * 60;
+      }
+    },
+    setBreakLength(state, action: PayloadAction<number>) {
+      if (action.payload > 0 && action.payload <= 60) {
+        state.breakLength = action.payload;
       }
     },
     reset: () => initialState,
@@ -72,6 +83,8 @@ export const {
   toggleRunning,
   tick,
   switchTimer,
+  setSessionLength,
+  setBreakLength,
 } = timerSlice.actions;
 
 export default timerSlice.reducer;
