@@ -13,3 +13,34 @@ button {
   font-size: 2em;
   margin: 20px 0;
 }
+
+.label {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+input {
+  max-width: 30px;
+}
+
+.edit-button:hover {
+  cursor: text;
+}
+
+.edit-button {
+  background-color: transparent;
+  border: 0;
+}
+
+#time-left {
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* .setters {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 500px;
+  margin: 0px auto;
+} */
