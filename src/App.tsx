@@ -15,6 +15,7 @@ import {
 import { RootState } from "./store";
 import AlarmSound from "./assets/AlarmSound.mp3";
 import { formatTime } from "./helper";
+import Setters from "./components/Setters";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,32 +52,19 @@ function App() {
 
   return (
     <>
-      <h1>Pomodoro Timer</h1>
-      <div id="break-label">
-        Break Length
-        <button id="break-decrement" onClick={() => dispatch(decrementBreak())}>
-          -
-        </button>
-        <span id="break-length">{breakLength}</span>
-        <button id="break-increment" onClick={() => dispatch(incrementBreak())}>
-          +
-        </button>
-      </div>
-      <div id="session-label">
-        Session Length
-        <button
-          id="session-decrement"
-          onClick={() => dispatch(decrementSession())}
-        >
-          -
-        </button>
-        <span id="session-length">{sessionLength}</span>
-        <button
-          id="session-increment"
-          onClick={() => dispatch(incrementSession())}
-        >
-          +
-        </button>
+      <div className="setters">
+        <Setters
+          type="break"
+          decAct={() => dispatch(decrementBreak())}
+          incAct={() => dispatch(incrementBreak())}
+          timeLength={breakLength}
+        />
+        <Setters
+          type="session"
+          decAct={() => dispatch(decrementSession())}
+          incAct={() => dispatch(incrementSession())}
+          timeLength={sessionLength}
+        />
       </div>
       <div id="timer-label">{timerLabel}</div>
       <div id="time-left">{formatTime(timeLeft)}</div>
