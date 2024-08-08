@@ -61,7 +61,7 @@ export default function Setters({
   return (
     <>
       <div id={`${type}-label`}>
-        <h4 className="label">{`${type} Length`}</h4>
+        <h4 className="label">{`Set ${type} Length`}</h4>
         <button id={`${type}-decrement`} onClick={decAct}>
           -
         </button>
