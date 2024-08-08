@@ -1,17 +1,26 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-}
-
-button {
-  margin: 5px;
 }
 
 #time-left {
   font-size: 2em;
-  margin: 20px 0;
+  margin: 10px 0;
+  font-weight: 900;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+}
+
+button {
+  margin: 5px;
 }
 
 .label {
@@ -31,16 +40,3 @@ input {
   background-color: transparent;
   border: 0;
 }
-
-#time-left {
-  font-weight: 900;
-  font-style: normal;
-}
-
-/* .setters {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 500px;
-  margin: 0px auto;
-} */
