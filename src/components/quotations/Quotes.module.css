@@ -1,7 +1,6 @@
 .container {
   margin: 0px 50px;
   padding: 10px;
-  height: 80px;
   display: flex;
   overflow: hidden;
 }

@@ -16,11 +16,15 @@ const quotes = [
 ];
 
 export default function Quotes() {
+  const [isMounted, setIsMounted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number>(() =>
     Math.floor(Math.random() * quotes.length)
   );
-
   const [isVisible, setIsVisible] = useState<boolean>(true);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, [setIsMounted]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,6 +38,8 @@ export default function Quotes() {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (!isMounted) return null;
 
   return (
     <div className={classes.container}>
