@@ -18,6 +18,7 @@ import AlarmSound from "../assets/AlarmSound.mp3";
 import { formatTime } from "../helper";
 import Setters from "./Setters";
 import Modal from "./ui/Modal";
+import Quotes from "./quotations/quotes";
 
 export default function Timer() {
   const dispatch = useDispatch();
@@ -85,9 +86,9 @@ export default function Timer() {
       >
         <div className={classes.header}>
           <h1 className={classes.title}>Better Pomodoro</h1>
-          <p className={classes.subtitle}>
-            "Focus is the art of knowing what to ignore." - James Clear
-          </p>
+          <div className={classes.quotes}>
+            <Quotes />
+          </div>
         </div>
         <div className={`${classes.setters}`}>
           <Setters
