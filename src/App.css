@@ -18,25 +18,3 @@ body {
   position: relative;
   width: 100%;
 }
-
-button {
-  margin: 5px;
-}
-
-.label {
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-}
-
-input {
-  max-width: 30px;
-}
-
-.edit-button:hover {
-  cursor: text;
-}
-
-.edit-button {
-  background-color: transparent;
-  border: 0;
-}

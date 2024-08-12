@@ -1,0 +1,39 @@
+.setter div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 40px;
+}
+
+.setter button {
+  margin: 5px;
+  width: 42px;
+}
+
+.label {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.editButton:hover {
+  cursor: text;
+}
+
+.editButton {
+  background-color: transparent;
+  margin: 0 16px;
+  border: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.editButton input {
+  width: 40px;
+  font-size: 20px;
+  margin: auto;
+}
+
+.editButton .timeLength {
+  margin: auto;
+  font-size: 24px;
+}

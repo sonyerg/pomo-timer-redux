@@ -9,4 +9,6 @@ function App() {
   );
 }
 
+//TODO: add footer and task
+
 export default App;

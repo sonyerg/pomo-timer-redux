@@ -5,6 +5,7 @@
 .header {
   display: flex;
   position: relative;
+  height: 150px;
 }
 
 .quotes {
@@ -14,13 +15,17 @@
 }
 
 .timer .title {
-  margin: auto;
+  width: 500px;
   opacity: 1;
   transition: opacity 2s ease-in-out;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.timer .title p {
+  font-style: italic;
 }
 
 .setters {
@@ -36,7 +41,21 @@
 
 .display {
   max-width: 200px;
-  margin: 10px auto;
+  margin: 20px auto;
+}
+
+.display button {
+  width: 100px;
+  height: 30px;
+}
+
+.displayButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 @keyframes hideSetters {

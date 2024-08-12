@@ -4,7 +4,7 @@ import classes from "./Quotes.module.css";
 
 const quotes = [
   `"Focus is the art of knowing what to ignore." - James Clear`,
-  `Focus is the key to achieving your goals." - Anonymous`,
+  `"Focus is the key to achieving your goals." - Anonymous`,
   `The successful warrior is the average man, with laser-like focus." - Bruce Lee`,
   `"Focus on the possibilities for success, not on the potential for failure." - Napoleon Hill`,
   `"Concentrate all your thoughts upon the work in hand. The sun's rays do not burn until brought to a focus." - Alexander Graham Bell`,
@@ -24,9 +24,7 @@ export default function Quotes() {
 
   useEffect(() => {
     setIsMounted(true);
-  }, [setIsMounted]);
 
-  useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(false);
 
@@ -37,7 +35,7 @@ export default function Quotes() {
     }, 30000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [setIsMounted]);
 
   if (!isMounted) return null;
 

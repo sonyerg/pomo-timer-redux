@@ -47,7 +47,7 @@ export default function Timer() {
         } else {
           dispatch(tick());
         }
-      }, 90);
+      }, 1000);
     } else {
       clearInterval(timer);
     }
@@ -85,10 +85,11 @@ export default function Timer() {
         }`}
       >
         <div className={classes.header}>
-          <h1 className={classes.title}>Better Pomodoro</h1>
-          <div className={classes.quotes}>
-            <Quotes />
+          <div className={classes.title}>
+            <h1>Better Pomodoro Timer</h1>
+            <p>Boost your productivity.</p>
           </div>
+          <div className={classes.quotes}>{isRunning && <Quotes />}</div>
         </div>
         <div className={`${classes.setters}`}>
           <Setters
@@ -107,12 +108,14 @@ export default function Timer() {
         <div className={classes.display}>
           <label id="timer-label">{timerLabel}</label>
           <div id="time-left">{formatTime(timeLeft)}</div>
-          <button id="start_stop" onClick={() => dispatch(toggleRunning())}>
-            {isRunning ? "Pause" : "Start"}
-          </button>
-          <button id="reset" onClick={handleModalOpen}>
-            Reset
-          </button>
+          <div className={classes.displayButtons}>
+            <button id="start_stop" onClick={() => dispatch(toggleRunning())}>
+              {isRunning ? "Pause" : "Start"}
+            </button>
+            <button id="reset" onClick={handleModalOpen}>
+              Reset
+            </button>
+          </div>
         </div>
         {isRunning && (
           <p>{`Incoming ${timerLabel === "Session" ? "break" : "session"}: ${

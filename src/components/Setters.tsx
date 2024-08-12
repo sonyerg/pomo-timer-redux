@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 
+import { FaMinus, FaPlus } from "react-icons/fa";
+
 import { setBreakLength, setSessionLength } from "../store/timer";
+import classes from "./Setters.module.css";
 
 interface SettersProps {
   type: "break" | "session";
@@ -60,29 +63,33 @@ export default function Setters({
 
   return (
     <>
-      <div id={`${type}-label`}>
-        <h4 className="label">{`Set ${type} Length`}</h4>
-        <button id={`${type}-decrement`} onClick={decAct}>
-          -
-        </button>
-        <button onClick={handleClick} className="edit-button">
-          {isEditing ? (
-            <input
-              type="number"
-              ref={inputRef}
-              onClick={(e) => e.stopPropagation()}
-              onChange={(e) => setUserInput(parseInt(e.target.value))}
-              value={userInput}
-              onKeyDown={handleKeyPress}
-              onBlur={handleBlur}
-            />
-          ) : (
-            <span id={`${type}-length`}>{timeLength}</span>
-          )}
-        </button>
-        <button id={`${type}-increment`} onClick={incAct}>
-          +
-        </button>
+      <div id={`${type}-label`} className={classes.setter}>
+        <h4 className={classes.label}>{`Set ${type} Length`}</h4>
+        <div>
+          <button id={`${type}-decrement`} onClick={decAct}>
+            <FaMinus />
+          </button>
+          <button onClick={handleClick} className={classes.editButton}>
+            {isEditing ? (
+              <input
+                type="number"
+                ref={inputRef}
+                onClick={(e) => e.stopPropagation()}
+                onChange={(e) => setUserInput(parseInt(e.target.value))}
+                value={userInput}
+                onKeyDown={handleKeyPress}
+                onBlur={handleBlur}
+              />
+            ) : (
+              <span id={`${type}-length`} className={classes.timeLength}>
+                {timeLength}
+              </span>
+            )}
+          </button>
+          <button id={`${type}-increment`} onClick={incAct}>
+            <FaPlus />
+          </button>
+        </div>
       </div>
     </>
   );
